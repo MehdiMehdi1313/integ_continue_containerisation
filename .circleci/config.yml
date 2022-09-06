@@ -7,7 +7,8 @@ jobs:
           username: mehdidi13
           password: $DOCKERHUB_PASSWORD # context / project UI env-var reference
     steps:
-      - checkout # check out the code in the project directory
+      - checkout: # check out the code in the project directory
+      - setup_remote_docker
       - run:
           name: "docker build"
           command: "docker build . -t mehdidi13/circleci-web-app"
